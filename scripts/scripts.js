@@ -7,11 +7,12 @@ const buildHTML = (data) => {
 	forecastContainer.innerHTML = '';
 	
 	const html = `
-		<div class="forescast">
-			<p>Weather in: ${data.location.name}, ${data.location.country}</p>
+		<div class="forecast">
+			<p>Location: ${data.location.name}, ${data.location.country}</p>
 			<p>Current temperature: ${data.current.temperature} <sup>o</sup>C</p>
 			<p>Feels like: ${data.current.feelslike} <sup>o</sup>C</p>
-			<p>Description: ${data.current.weather_descriptions}</p>
+			<p>Humidity: ${data.current.humidity}%</p>
+			<p>Current conditions: ${data.current.weather_descriptions}</p>
 			<div><img src="${data.current.weather_icons}" /></div>
 			<p>Local date and time: ${data.location.localtime}</p>
 		</div>
@@ -24,8 +25,8 @@ const fetchData = async() => {
 	try {
 		const response = await fetch(`http://api.weatherstack.com/current?access_key=${apiKey}&query=${inputField.value}`)
 		if(response.ok) {
-			console.log(response.statusText)
 			const data = await response.json()
+			console.log(data)
 			buildHTML(data);
 		} else if(!response.ok) {
 			throw Error("OOOpppps");
@@ -36,7 +37,6 @@ const fetchData = async() => {
 		console.warn(err);
 	}	
 }
-
 
 getWeatherBtn.addEventListener('click', () => {
 	if(inputField.value !== '') {

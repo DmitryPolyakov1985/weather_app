@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Francois+One&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,25 +7,92 @@
 }
 html {
     font-size: 100%;
+    /* height: calc(100vh-40px); */
+    /* padding-bottom: 4rem; */
+    
 }
-
+body {
+    font-family: 'Francois One', sans-serif;
+    background: linear-gradient(90deg, #d4eece, #55b3d0, #1e7eb7),
+                url("../images/background.jpg") no-repeat;
+                background-blend-mode: multiply;
+                /* background-position: center; */
+                min-height: 100vh;
+                background-size: cover;
+                
+}
 h1 {
     text-align: center;
 }
+body {
+    display: flex;
+    justify-content: center;
+}
 #mainContainer {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 18vh;
+    padding: 1rem;
+}
+.forecastContainer {
     text-align: center;
-    margin-top: auto;
-    margin-bottom: auto;
+}
+.forecastContainer h1 {
+    color: #fff;
+    font-size: 5.3rem;
+    letter-spacing: 1.2px;
+    margin-bottom: 2.7rem;
+    line-height: 1;
+}
+.forecast {
+    margin-top: -7vh;
+    margin-bottom: 1.5rem;
+}
+.forecast p {
+    color: #fff;
+    font-size: 1.25rem;
+    line-height: 1.4;
+}
+.forecast div img {
+    width: 30%;
 }
 #inputField {
     display: block;
     margin: 0 auto;
+    width: 70%;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.719);
+    color: #0D325D;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+#inputField:focus {
+    background: #fff;
+    
 }
 .getWeatherBtn {
     display: block;
     margin: 0 auto;
-    margin-top: 20px;
+    padding: 1rem 2rem;
+    border: none;
+    color: rgba(255, 255, 255, 0.678);
+    background: rgb(11, 31, 68);
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 5px;
+    outline: none;
+    margin-bottom: 3rem;
+}
+.getWeatherBtn:active {
+    transform: scale(0.99) translateY(1px);
+}
+.getWeatherBtn:hover {
+    color: rgb(255, 255, 255);
+    background: rgb(5, 20, 48);
+    border: 0.5px solid rgba(255, 255, 255, 0.521);
 }
 footer {
     height: 40px;
@@ -37,5 +106,38 @@ footer {
     justify-content: center;
 }
 footer p {
+    font-size: 1rem;
     color: rgba(255, 255, 255, 0.603);
+}
+
+
+/* MEDIA QUERIES */
+@media (max-width:800px) {
+    #mainContainer {
+        margin-top: 13vh;
+    }
+    .forecastContainer h1 {
+        font-size: 4rem;
+        margin-bottom: 2rem;
+    }
+    .forecast p {
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+}
+@media (max-width:400px) {
+    #mainContainer {
+        margin-top: 12vh;
+    }
+    .forecastContainer h1 {
+        font-size: 3.3rem;
+        margin-bottom: 2rem;
+    }
+    .forecast p {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+    footer p {
+        font-size: 0.75rem;
+    }
 }

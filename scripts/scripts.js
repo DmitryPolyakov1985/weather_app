@@ -24,7 +24,6 @@ const fetchData = async() => {
 	try {
 		const response = await fetch(`http://api.weatherstack.com/current?access_key=${apiKey}&query=${inputField.value}`)
 		if(response.ok) {
-			console.log(response.statusText)
 			const data = await response.json()
 			buildHTML(data);
 		} else if(!response.ok) {
@@ -36,7 +35,6 @@ const fetchData = async() => {
 		console.warn(err);
 	}	
 }
-
 
 getWeatherBtn.addEventListener('click', () => {
 	if(inputField.value !== '') {

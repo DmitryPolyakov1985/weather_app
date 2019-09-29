@@ -6,15 +6,29 @@
 html {
     font-size: 100%;
 }
-
+body {
+    background: linear-gradient(90deg, #d4eece, #55b3d0, #1e7eb7),
+                url("../images/background.jpg") no-repeat;
+                background-blend-mode: multiply;
+                background-size: cover;
+                /* background-attachment: fixed; */
+                height: 100vh;
+}
 h1 {
     text-align: center;
 }
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 #mainContainer {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+.forecastContainer {
     text-align: center;
-    margin-top: auto;
-    margin-bottom: auto;
 }
 #inputField {
     display: block;
@@ -37,5 +51,14 @@ footer {
     justify-content: center;
 }
 footer p {
+    font-size: 1rem;
     color: rgba(255, 255, 255, 0.603);
+}
+
+
+/* MEDIA QUERIES */
+@media (max-width:400px) {
+    footer p {
+        font-size: 0.75rem;
+    }
 }

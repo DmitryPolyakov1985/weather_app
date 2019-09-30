@@ -24,6 +24,10 @@ body {
 h1 {
     text-align: center;
 }
+#errorMessage {
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
 body {
     display: flex;
     justify-content: center;

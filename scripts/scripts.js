@@ -32,7 +32,7 @@ const fetchData = async() => {
 			throw Error("OOOpppps");
 		}
 	} catch(err) {
-		forecastContainer.innerHTML = "<h2>Looks like this location doesn't exist...<h2>";
+		forecastContainer.innerHTML = `<h2 id="errorMessage">Looks like this location doesn't exist...<h2>`;
 		inputField.value = '';
 		console.warn(err);
 	}	
